@@ -1,0 +1,220 @@
+﻿#name("Clone1")
+getscreen
+#autorun
+$tk = TFREAD("taikhoan\\taikhoan.txt",2)
+$wnd1 = wndfind($tk)
+$x = TFREAD("taikhoan\\toado.txt",3)
+$y = TFREAD("taikhoan\\toado.txt",4)
+$d=150
+$r=100
+WNDSETINFO($wnd1,$x,$y,$d,$r) 
+
+$reg = TFREAD("ht\\checkrg.txt",1)
+
+
+hset($wnd1,1)
+waitms(30)
+LCLICK(1,1)
+
+
+//Logwrite( pxl(134,67))
+
+
+
+
+
+getscreen
+
+if_pixel_in(131,83,131,83,13498623) // thoat p
+ print( "thoat phong ")
+   LCLICK(129,57)  // 1650761
+    waitms(1000)
+end_if
+
+
+
+if_pixel_in(78,50,78,50,532280) // nhan moi
+ print( "nhan loi moi ")
+   LCLICK(53,37)  // 3571866
+
+
+  waitms(2000)
+end_if
+
+if_pixel_in(132,83,132,83,11859455,9093587,15793663) // chuan bi
+// print( "chuan bi ")
+LCLICK(126,49)  // 463129
+  
+$Lmh = 0
+$Turn = 0
+$loilatthe = 0
+$vitri = 0
+$loiss = 0
+
+ waitms(1000)
+end_if
+
+
+
+//-------Nhan tun------
+
+getscreen 
+
+if_pixel_in(74,47,74,47,14284287)
+keypress(#P)
+ waitms(2000)
+end_if
+
+
+//-------Lat the------
+ getscreen 
+
+if_pixel_in(135,37,135,37,5228791) 
+   print("lat the ")
+   waitms(7000)
+
+   LCLICK(127,12)  // 10267113
+   WAITMS(800)
+   LCLICK(126,20)  // 14474460
+   WAITMS(800)
+   LCLICK(125,28)  // 15257527
+   WAITMS(800)
+   LCLICK(126,40)  // 6750766
+   WAITMS(800)
+   LCLICK(127,51)  // 7929883
+   WAITMS(800)
+
+//   LCLICK(118,10)  // 2233411
+//   WAITMS(800)
+//   LCLICK(116,19)  // 2900920
+//   WAITMS(800)
+//   LCLICK(116,30)  // 15389113
+//   WAITMS(800)
+//   LCLICK(116,40)  // 13041732
+//   WAITMS(800)
+//   LCLICK(117,49)  // 9373220
+//   WAITMS(800)
+
+//   LCLICK(107,11)  // 14138273
+//   WAITMS(800)
+//   LCLICK(109,21)  // 9543130
+//   WAITMS(800)
+//   LCLICK(107,30)  // 15389113
+//   WAITMS(800)
+//   LCLICK(107,40)  // 7158200
+//   WAITMS(800)
+//   LCLICK(107,49)  // 7865417
+//   WAITMS(800)
+//   
+end_if
+
+
+
+//tat thong bao chuc phuc
+if_pixel_in(56,67,56,67,29936)
+Keypress(#esc)
+print("Tat chuc phuc")
+waitms(1000)
+end_if	
+
+  //tat thong bao vip
+if_pixel_in(69,82,69,82,140998)
+LCLICK(93,6)  // 13875099
+print("Tat vip")
+waitms(1000)
+end_if	
+
+  //tat thong goi y
+if_pixel_in(280,128,280,128,8119)
+LCLICK(269,98)  // 11993087
+print("Tat goi y")
+waitms(1000)
+end_if	
+
+
+  //tat gui thu
+if_pixel_in(69,36,69,36,13629183)
+print("Tat gui thu")
+Keypress(#esc)
+waitms(1000)
+Keypress(#enter)
+waitms(1000)
+Keypress(#esc)
+end_if
+
+  //tat tb pho ban thu phi
+if_pixel_in(79,69,79,69,39419)
+Keypress(#esc)
+print("Tat tb pb thu phi")
+waitms(1000)
+end_if	
+
+//-----------Auo relog----------------
+
+   //loi mat ket noi
+if(pxl(74,67) = 11073279)
+$loimkn = $loimkn + 1
+print("loi mat ket noi " $loimkn)
+waitms(1000)   
+if($loimkn  >= 5)
+   POSTMESSAGE($wnd1,0x0010,0,0)
+   wait(3)
+    $loimkn = 0
+print("loi mat ket noi")
+end_if
+end_if	
+
+
+
+
+
+//-------------------relog---------------------------------
+
+
+THREAD(relog, 1)
+$Lmh = $Lmh + 1    
+//LOGWRITE("time relog: ", $Lmh)
+waitms(1000)  
+END_THREAD
+
+
+//-----------Auo relog----------------
+
+//thoi gian relog bao nhieu phut
+$time = TFREAD("ht\\time.txt",1)
+$time2 = $time*60
+
+if($Lmh >= $time2)
+   POSTMESSAGE($wnd1,0x0010,0,0)
+   print("loi mkn sau ... phut" )
+																		
+$Lmh = 0
+   wait(3)
+   end_if
+
+
+   //loi lat the
+if(pxl(45,35) = 25067)
+$loilatthe =  $loilatthe + 1
+ //print("loi lat the pb " $loilatthe)
+waitms(1000)   
+if($loilatthe >= 20)
+   POSTMESSAGE($wnd1,0x0010,0,0)
+   wait(3)
+    $loilatthe = 0
+print("loi lat the pb")
+end_if
+end_if
+
+   //loi ket hop tran
+if(pxl(78,61) = 7328481)
+$loiss =  $loiss + 1
+//print("loi ket hop tran " $loiss)
+waitms(1000)   
+if($loiss >= 10)
+   POSTMESSAGE($wnd1,0x0010,0,0)
+   wait(3)
+    $loiss = 0
+print("loi ket hop tran")
+end_if
+end_if
