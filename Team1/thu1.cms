@@ -1,0 +1,157 @@
+﻿#name("thu2")
+#autorun
+getscreen
+$tk = TFREAD("taikhoan\\taikhoan.txt",2)
+$ten = TFREAD("taikhoan\\tenthu.txt",1)
+$thu = TFREAD("ht\\thu.txt",1)
+$ingame = $ten
+$wnd1 = wndfind($tk)
+$x=486
+$y=0
+$d=500
+$r=350
+WNDSETINFO($wnd1,$x,$y,$d,$r) 
+hset($wnd1,1)
+waitms(30)
+LCLICK(1,1)
+
+
+//-----------------------Gui thu-----------------
+if( $thu = 3)
+
+//mo hom thu
+if_pixel_in(294,324,294,324,3395)
+   print("mo thu") 
+   LCLICK(338,293)  // 929037
+   waitms(1000)
+end_if
+
+//viet thu
+if_pixel_in(89,67,89,67,12578559)
+   LCLICK(78,282)  // 2535111
+    print("viet thu")
+     waitms(1000)
+end_if
+
+
+
+
+
+if_pixel_in(62,63,62,63,12578559)
+
+     if_pixel_in(428,115,428,115,9091017)      
+      print("Đang send trang bi") 
+         for($b = 68, $b < 230)
+            for($a = 262, $a < 423)
+               LCLICK($a,$b)//click item
+               waitms(500)
+               LCLICK(52,246)  // add
+               waitms(500)
+               keypress(#enter)
+               waitms(500)
+               DBLCLICK(82,55)  // nguoi nhan
+               waitms(500)
+               keystring($ingame)
+               waitms(500)
+               LCLICK(67,276)  // gui
+               waitms(500)
+               $a = $a + 23
+            end_cyc
+            waitms(300)
+            $b = $b + 23
+         end_cyc           
+   end_if   
+   
+   if_pixel_in(428,170,428,170,9617361)
+      print("Đang send dao cu")
+         for($b = 68, $b < 230)
+            for($a = 262, $a < 423)
+               LCLICK($a,$b)//click item
+               waitms(500)
+               LCLICK(52,246)  // add
+               waitms(500)
+               keypress(#enter)
+               waitms(500)
+               DBLCLICK(82,55)  // nguoi nhan
+               waitms(500)
+               keystring($ingame)
+               waitms(500)
+               LCLICK(67,276)  // gui
+               waitms(500)
+               $a = $a + 23
+            end_cyc
+            waitms(300)
+            $b = $b + 23
+         end_cyc
+   end_if
+   
+  if_pixel_in(428,225,428,225,9419982)
+      print("Đang send chau bau")
+         for($b = 68, $b < 230)
+            for($a = 262, $a < 423)
+               LCLICK($a,$b)//click item
+               waitms(500)
+               LCLICK(52,246)  // add
+               waitms(500)
+               keypress(#enter)
+               waitms(500)
+               DBLCLICK(82,55)  // nguoi nhan
+               waitms(500)
+               keystring($ingame)
+               waitms(500)
+               LCLICK(67,276)  // gui
+               waitms(500)
+               $a = $a + 23
+            end_cyc
+            waitms(300)
+            $b = $b + 23
+         end_cyc
+         LCLICK(366,234)  // qua trang
+         waitms(300)
+         $a = 262
+         $b = 68
+   end_if
+	 
+    if_pixel_in(428,270,428,270,9222604)
+             print("Đang send trang phuc") 
+               LCLICK(267,92)//click item
+               waitms(500)
+               LCLICK(52,246)  // add
+               waitms(500)
+               DBLCLICK(82,55)  // nguoi nhan
+               waitms(500)
+               keystring($ingame)
+               waitms(500)
+               LCLICK(67,276)  // gui
+               waitms(500) 
+            
+     
+end_if  
+end_if
+
+
+else
+
+//-----------------------Nhan thu-----------------
+if( $thu = 1)
+
+getscreen
+
+//mo hom thu
+if_pixel_in(294,324,294,324,3395)
+print("Mo thu")
+LCLICK(340,288)  // 265496
+waitms(1000)
+end_if
+
+if(pxl(400,118) = 11721706)
+LCLICK(67,258)  // 12182771
+waitms(300)
+LCLICK(126,259)  // 1655904
+waitms(500)
+LCLICK(96,259)  // 6788773
+waitms(700)
+end_if
+
+end_if
+end_if 
