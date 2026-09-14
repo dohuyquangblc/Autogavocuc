@@ -74,7 +74,7 @@ if_pixel_in(62,63,62,63,12578559)
                waitms(500)
                DBLCLICK(82,55)  // nguoi nhan
                waitms(500)
-              KEYSTRING($ingame, 50)
+               keystring($ingame)
                waitms(500)
                LCLICK(67,276)  // gui
                waitms(500)
