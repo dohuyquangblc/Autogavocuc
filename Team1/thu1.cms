@@ -79,9 +79,9 @@ if_pixel_in(428,170,428,170,9617361)
                TOCLIP($ingame) // Đưa chuỗi tiếng Việt có dấu vào Clipboard
                waitms(100)
                KEYDOWN(#CTRL)  // Nhấn giữ phím Ctrl
-               waitms(50)
+               waitms(200)
                KEYPRESS(#V)    // Nhấn phím V để Paste (Dán)
-               waitms(50)
+               waitms(200)
                KEYUP(#CTRL)    // Nhả phím Ctrl
                // KẾT THÚC ĐOẠN SỬA LỖI
                
