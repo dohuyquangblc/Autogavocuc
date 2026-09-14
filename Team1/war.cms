@@ -1,0 +1,135 @@
+﻿#name("war0") 
+#autorun    
+#includer("sub.xml") 
+Getscreen
+$tk = TFREAD("taikhoan\\taikhoan.txt",1)
+$wnd1 = wndfind($tk)
+$x = TFREAD("taikhoan\\toado.txt",1)
+$y = TFREAD("taikhoan\\toado.txt",2)
+$d=500
+$r=350
+WNDSETINFO($wnd1,$x,$y,$d,$r) 
+$vk = TFREAD("ht\\gocvk.txt",1)
+$reg = TFREAD("ht\\checkrg.txt",1)
+$Guild = TFREAD("ht\\Guild.txt",1)
+$nhatky = STRCONCAT($tk," Win:  ", $Win , " lose:  ", $lose)
+hsettext($wnd1,$nhatky)
+hset($wnd1,1)
+waitms(10)
+LCLICK(1,1)
+
+
+getscreen 
+if_pixel_in(169,63,169,63,15518975)  
+logwrite("tat thong bao")	
+LCLICK(391,82)  // 888591
+waitms(800)
+end_if  
+
+if_pixel_in(371,218,371,218,12578559)  
+logwrite("tat goi y")	
+LCLICK(458,190)  // 14737618
+waitms(800)
+end_if 
+  
+
+if_pixel_in(34,236,34,236,2115952)
+logwrite("vao phong game")
+LCLICK(290,96)  // 2056050
+waitms(1000)
+end_if   
+
+
+if_pixel_in(150,41,150,41,16383743)  
+
+print("Dang go aim...")
+         waitms(2000)        
+         keypress(13) // Enter mở chat
+         waitms(300)
+         
+keystring("aim60_5")
+
+         waitms(300)
+         keypress(13) // Enter gửi
+         waitms(800)
+ logwrite("tao phong")	        
+LCLICK(337,265)  // 528414
+waitms(1000)
+end_if  
+
+
+if_pixel_in(454,296,454,296,15203583)
+logwrite("batdau")
+LCLICK(459,250)  // 5140868
+waitms(1000)
+$turn = 0
+end_if
+
+
+if_pixel_in(234,37,234,37,255) 
+logwrite("bat auto")
+LCLICK(243,8)  // 13941150 // bat auto dame
+waitms(500)
+end_if 
+
+if_pixel_in(478,265,478,265,1856766) 
+logwrite("gom buff")
+LCLICK(470,233) // thu buff
+waitms(500)
+end_if 
+
+Getscreen  
+
+if_pixel_in(176,145,176,145,16121340)
+IF($turn >= 1)
+keydown(186)
+waitms(500)
+keydown(186)
+waitms(500)
+keydown(186)
+waitms(200)
+keydown(186)
+LOGWRITE("tu sat")
+END_IF
+END_IF
+
+
+if_pixel_in(176,145,176,145,16121340)
+logwrite("nhan turn")
+waitms(500)
+#includer("ht\\buff.txt")
+waitms(8000)
+
+$turn = $turn +1
+
+end_if      
+
+
+  //---------------win---------------------
+if_pixel_in(476,63,476,63,5757427)
+ $win = $win + 1
+$Lmh = 0
+
+waitms(6000)
+end_if
+
+
+//---------------Lose---------------------
+if_pixel_in(476,63,476,63,526344)
+ $lose = $lose + 1
+$Lmh = 0
+
+waitms(6000)
+end_if
+
+
+
+
+
+
+
+
+	   
+	   
+
+	   
