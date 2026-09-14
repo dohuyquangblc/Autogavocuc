@@ -62,29 +62,19 @@ if_pixel_in(62,63,62,63,12578559)
          end_cyc           
    end_if   
    
-if_pixel_in(428,170,428,170,9617361)
+   if_pixel_in(428,170,428,170,9617361)
       print("Đang send dao cu")
          for($b = 68, $b < 230)
             for($a = 262, $a < 423)
-               LCLICK($a,$b)   // click item
+               LCLICK($a,$b)//click item
                waitms(500)
                LCLICK(52,246)  // add
                waitms(500)
                keypress(#enter)
                waitms(500)
-               DBLCLICK(82,55) // nguoi nhan
+               DBLCLICK(82,55)  // nguoi nhan
                waitms(500)
-               
-               // BẮT ĐẦU ĐOẠN SỬA LỖI TIẾNG VIỆT
-               TOCLIP($ingame) // Đưa chuỗi tiếng Việt có dấu vào Clipboard
-               waitms(100)
-               KEYDOWN(#CTRL)  // Nhấn giữ phím Ctrl
-               waitms(200)
-               KEYPRESS(#V)    // Nhấn phím V để Paste (Dán)
-               waitms(200)
-               KEYUP(#CTRL)    // Nhả phím Ctrl
-               // KẾT THÚC ĐOẠN SỬA LỖI
-               
+              KEYSTRING($ingame, 50)
                waitms(500)
                LCLICK(67,276)  // gui
                waitms(500)
