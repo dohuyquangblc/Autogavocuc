@@ -1,0 +1,74 @@
+﻿#name("sk2d") 
+#autorun    
+#includer("sub.xml") 
+
+team(1,1,2)
+
+
+moiban()
+
+
+  getscreen 
+IF($da_go == 0)
+   IF_PIXEL_IN(305,238,305,238, 4558277, 1455459)   // bat dau
+      $da_go = 1 //
+
+      print("Dang go aim...")
+      waitms(3000)        
+      keypress(13) // Enter mở chat
+      waitms(1000)        
+      keystring("aim30_5 ")
+      waitms(1000) 
+      keypress(13) // Enter gửi
+      print(" go aim xong...")
+      waitms(1000)
+   END_IF
+END_IF
+
+
+
+batdau()
+
+chonpb(3,2,1,1)
+
+
+latthe(1,10)
+
+
+
+if_pixel_in(234,37,234,37,255) 
+logwrite("bat auto")
+LCLICK(243,8)  // 13941150 // bat auto dame
+waitms(500)
+end_if 
+
+if_pixel_in(478,265,478,265,1856766) 
+logwrite("gom buff")
+LCLICK(470,233) // thu buff
+waitms(500)
+end_if 
+
+Getscreen 
+
+// Kiểm tra màu A
+IF_PIXEL_IN(239, 114, 239, 114, 16121087)
+
+   // Nếu thấy thêm màu B -> Nhấp Q 5 lần trước
+   IF_PIXEL_IN(290, 40, 290, 40, 3092050)
+      FOR($i=0, $i < 6)
+         KEYPRESS(#Q)
+         WAITMS(100)
+      END_CYC
+   END_IF
+
+   // Dù có màu B hay không thì vẫn chạy phần buff dame này
+   LOGWRITE("buffdame")
+   WAITMS(500)
+   #include "ht\buff.txt"
+   WAITMS(18000)
+
+END_IF
+
+
+
+	   

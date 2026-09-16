@@ -78,31 +78,31 @@ LCLICK(470,233) // thu buff
 waitms(500)
 end_if 
 
-Getscreen  
+GETSCREEN
 
-if_pixel_in(176,145,176,145,16121340)
-IF($turn >= 1)
-keydown(186)
-waitms(500)
-keydown(186)
-waitms(500)
-keydown(186)
-waitms(200)
-keydown(186)
-LOGWRITE("tu sat")
-END_IF
-END_IF
-
-
-if_pixel_in(176,145,176,145,16121340)
-logwrite("nhan turn")
-waitms(500)
-#includer("ht\\buff.txt")
-waitms(8000)
-
-$turn = $turn +1
-
-end_if      
+IF_PIXEL_IN(176,145,176,145,16121340)
+   IF($turn >= 1)
+      LOGWRITE("tu sat")
+      KEYPRESS(186)
+      WAITMS(500)
+      KEYPRESS(186)
+      WAITMS(500)
+      KEYPRESS(186)
+      WAITMS(200)
+      KEYPRESS(186)
+      WAITMS(500)
+      
+ 
+   ELSE
+      LOGWRITE("nhan turn")
+      WAITMS(500)
+      #include "ht\buff.txt"
+      WAITMS(8000)
+      
+      $turn = $turn + 1 // Tăng lượt nếu chưa đủ 3 turn
+   END_IF
+   WAITMS(1000) // Khoảng chờ tránh bị bấm đè liên tục
+END_IF   
 
 
   //---------------win---------------------
