@@ -34,7 +34,7 @@ end_if
 Getscreen 
 
 // Kiểm tra màu A
-IF_PIXEL_IN(239, 114, 239, 114, 16121087)
+if_pixel_in(176,145,176,145,16121340) // turn cho den luot
    LOGWRITE("buffdame")
    WAITMS(500)
    #include "ht\buff.txt"
@@ -51,17 +51,15 @@ IF_PIXEL_IN(239, 114, 239, 114, 16121087)
    END_IF
 
    // Chờ thêm 3 giây nữa cho đủ mốc 6 giây
-   WAITMS(3000)
+   WAITMS(2000)
 
-   // Sau 6 giây, nếu điểm đó VẪN CÒN màu A thì ấn P dự phòng
+   // Sau 2 giây, nếu điểm đó VẪN CÒN màu A thì ấn P dự phòng
    IF_PIXEL_IN(239, 114, 239, 114, 16121087)
       KEYPRESS(#P)
-      WAITMS(50)
+      WAITMS(500)
       LOGWRITE("Da an P du phong")
    END_IF
 
-   // Chờ nốt 15 giây còn lại (tổng thời gian chờ vẫn là 18s như cũ)
-   WAITMS(15000)
 END_IF
 
 
