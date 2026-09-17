@@ -50,15 +50,12 @@ if_pixel_in(176,145,176,145,16121340) // turn cho den luot
       END_CYC
    END_IF
 
-   // Chờ thêm 3 giây nữa cho đủ mốc 6 giây
+   // Chờ thêm 2 giây nữa cho đủ mốc 6 giây
    WAITMS(2000)
-
    // Sau 2 giây, nếu điểm đó VẪN CÒN màu A thì ấn P dự phòng
-   IF_PIXEL_IN(239, 114, 239, 114, 16121087)
       KEYPRESS(#P)
-      WAITMS(500)
       LOGWRITE("Da an P du phong")
-   END_IF
+
 
 END_IF
 
