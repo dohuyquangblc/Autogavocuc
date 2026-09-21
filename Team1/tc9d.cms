@@ -33,11 +33,11 @@ logwrite("buffdame")
 waitms(500)
 #includer("ht\\buff.txt")
 
-   WAITMS(2500) 
+   WAITMS(2800) 
    // -> Đã trôi qua khoảng 3 giây kể từ khi thấy màu A
 
    // Kiểm nhap tăng them luc
-      FOR($i=0, $i < 6)
+      FOR($i=0, $i < 8)
          KEYPRESS(#Q)
          WAITMS(50)
       END_CYC
