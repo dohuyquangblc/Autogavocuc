@@ -81,7 +81,7 @@ end_if
 GETSCREEN
 
 IF_PIXEL_IN(176,145,176,145,16121340)
-   IF($turn >= 1)
+   IF($turn >= 3)
       LOGWRITE("tu sat")
 keydown(186)
 waitms(500)
