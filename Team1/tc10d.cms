@@ -1,0 +1,48 @@
+﻿#name("tc9d") 
+#autorun    
+#includer("sub.xml") 
+
+team(1,1,2)
+
+
+moiban()
+
+batdau2("aim33_5 ")
+
+chonpb(2,10,1,1)
+
+
+latthe(1,10)
+
+
+if_pixel_in(234,37,234,37,255) 
+logwrite("bat auto")
+LCLICK(243,8)  // 13941150 // bat auto dame
+waitms(500)
+end_if 
+
+if_pixel_in(478,265,478,265,1856766) 
+logwrite("gom buff")
+LCLICK(470,233) // thu buff
+waitms(500)
+end_if 
+
+Getscreen 
+if_pixel_in(176,145,176,145,16121340) // turn cho den luot
+logwrite("buffdame")
+waitms(500)
+#includer("ht\\buff.txt")
+
+   WAITMS(2900) 
+   // -> Đã trôi qua khoảng 3 giây kể từ khi thấy màu A
+
+   // Kiểm nhap tăng them luc
+      FOR($i=0, $i < 8)
+         KEYPRESS(#Q)
+         WAITMS(80)
+      END_CYC
+ 
+waitms(500)
+
+end_if 
+	
