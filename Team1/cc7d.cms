@@ -1,4 +1,4 @@
-﻿#name("cc6d") 
+﻿#name("cc7d") 
 #autorun    
 #includer("sub.xml") 
 
@@ -8,7 +8,7 @@ moiban()
 
 batdau()
 
-chonpb(4,6,1,1)
+chonpb(4,7,1,1)
 
 
 latthe(1,10)

@@ -1,4 +1,4 @@
-﻿#name("tc14d") 
+﻿#name("tc15d") 
 #autorun    
 #includer("sub.xml") 
 
@@ -9,7 +9,7 @@ moiban()
 
 batdau()
 
-chonpb(2,14,1,1)
+chonpb(2,15,1,1)
 
 
 latthe(1,10)
